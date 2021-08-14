@@ -1,0 +1,21 @@
+$tablet-width: 768px;
+$tablet-width-onli: 618px;
+$desktop-width: 1200px;
+
+:root {
+  --white: #ffffff;
+  --black: #333333;
+  --greey-dark: #6a6a6a;
+  --green: #00793a;
+  --grey: #f0f0f0;
+}
+
+.btn-special-green {
+  background: var(--green);
+  color: var(--white);
+}
+
+$font-oswald: "Oswald", "Arial", sans-serif;
+$font-roboto: "Roboto", "Arial", sans-serif;
+
+$gradient-bg: linear-gradient(180deg, var(--greey-dark) 0%, var(--black) 100%);

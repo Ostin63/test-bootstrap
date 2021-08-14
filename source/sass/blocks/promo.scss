@@ -1,0 +1,61 @@
+.promo {
+  height: 420px;
+  padding: 17px 10px 208px 12px;
+  background-image:
+    url("../img/bg-max.png"),
+    url("../img/bg-promo.jpg");
+  background-position: 100% 0;
+  background-size: 614px 420px, 895px 420px;
+  background-repeat: no-repeat;
+
+  @media (min-width: $tablet-width-onli) {
+    padding: 57px 10px 0 11px;
+    background-position: 0 0, 100% 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    height: 466px;
+
+    &::after {
+      width: 555px;
+      height: 212px;
+      display: block;
+      content: "";
+      margin-left: 194px;
+      background-image: url("../img/car.png");
+      background-position: 100% 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media (min-width: $desktop-width) {
+        margin-left: 323px;
+      }
+    }
+  }
+
+  // @media (min-width: $desktop-width) {
+  //   background-image:
+  //     url("../img/bg-max.png"),
+  //     url("../img/bg-promo.jpg");
+  //   background-position: 100% 0;
+  //   background-size: 780px 427px, 895px 420px;
+  //   background-repeat: no-repeat;
+  // }
+}
+
+.promo__title {
+  margin-bottom: 30px;
+  margin-right: 50px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  color: var(--white);
+  font-family: $font-oswald;
+
+  @media (min-width: $tablet-width-onli) {
+    width: 490px;
+    margin-bottom: 41px;
+    font-size: 42px;
+    line-height: 50px;
+  }
+}

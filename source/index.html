@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Альфа-Информ</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__top-wrapper  container-xl d-flex justify-content-between">
+      <a class="d-block" href="#">
+        <svg class="header__logo-svg" role="img" aria-label="Логотип компании" width="254" height="43">
+          <use xlink:href="img/stack.svg#car-logo"></use>
+        </svg>
+      </a>
+      <blockquote class="header__blockquote d-none d-xl-block d-xxl-block">Только качественные<br>запчасти</blockquote>
+      <div class="header__info d-flex justify-content-between flex-column d-none d-xl-block d-xxl-block">
+        <div class="header__info-address d-flex justify-content-between">
+          <svg class="header__pin-svg" role="img" aria-label="Логотип компании" width="17" height="23">
+            <use xlink:href="img/stack.svg#pin"></use>
+          </svg>
+          <p class="header__info-text m-0">г. Пенза, ул. Ленина, 45</p>
+        </div>
+        <div class="header__info-phone">
+          <svg class="header__phone-svg" role="img" aria-label="Логотип компании" width="21" height="19">
+            <use xlink:href="img/stack.svg#phone"></use>
+          </svg>
+          <a class="text-dark text-decoration-none" href="tel:+7900324323">+7 (900) 321-43-23</a>
+        </div>
+      </div>
+      <ul class="header__social-list align-baseline d-flex justify-content-between m-0 p-0  d-none d-xl-flex d-xxl-flex">
+        <li class="header__item">
+          <a class="header__social-link" href="#">
+            <svg class="header__social-svg header__social-svg--viber " role="img" aria-label="Мы в фйбуке" width="31"
+              height="31">
+              <use xlink:href="img/stack.svg#viber"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__item">
+          <a class="fheader__social-link" href="#">
+            <svg class="header__social-svg header__social-svg--instagram" role="img" aria-label="Мы в Инстаграме"
+              width="31" height="31">
+              <use xlink:href="img/stack.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__item">
+          <a class="header__social-link" href="#">
+            <svg class="header__social-svg header__social-svg--whatsapp" role="img" aria-label="Мы в ватсапп" width="31"
+              height="31">
+              <use xlink:href="img/stack.svg#whatsapp"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <a class="d-block d-xl-none d-xxl-none" href="#">
+        <svg class="header__burger-svg" role="img" aria-label="Логотип компании" width="45" height="41">
+          <use xlink:href="img/stack.svg#burger"></use>
+        </svg>
+      </a>
+    </div>
+    <div class=" bg-light d-none d-xl-block d-xxl-block">
+      <ul class="header__nav container-xl justify-content-between nav">
+        <li class="">
+          <a class="text-reset text-decoration-none" href="#">Главная</a>
+        </li>
+        <li class="">
+          <a class="text-reset text-decoration-none" href="#">О компании</a>
+        </li>
+        <li class="">
+          <a class="text-reset text-decoration-none" href="#">Подбор автозапчастей</a>
+        </li>
+        <li class="">
+          <a class="text-reset text-decoration-none" href="#">Каталог</a>
+        </li>
+        <li class="">
+          <a class="text-reset text-decoration-none" href="#">Новости</a>
+        </li>
+        <li class="">
+          <a class="text-reset text-decoration-none" href="#">Акции и бонусы</a>
+        </li>
+        <li class="">
+          <a class="text-reset text-decoration-none" href="#">Контакты</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="promo">
+      <h1 class="promo__title">Качественные автозапчасти&nbsp;для иномарок</h1>
+      <a href="#" class="btn btn-special-green"  role="button">Оставить заявку</a>
+    </section>
+  </main>
+
+  <footer class="footer"></footer>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    crossorigin="anonymous"></script>
+  <script>
+    let posts;
+    document.body.onload = async (e) => {
+      console.log("document loaded!");
+      posts = await fetch("https://www.techiediaries.com/api/feed.json").then(function (response) {
+        return response.json();
+      });
+      posts.forEach(element => {
+        let child = document.createElement('div');
+        child.classList.add('mt-1');
+        ['card'].forEach((v) => {
+          child.classList.add(v);
+        })
+
+
+        child.innerHTML =
+          `<div class="card-body">
+                <h2 class="card-title">${element.title}</h2>
+                <p class="card-text">${element.excerpt}</p>
+                <div class="card-footer">
+                    <a href="${element.url}" class="card-link">Read</a>
+                    <a href="#" class="card-link">Save to read offline</a>
+                </div>
+          </div>`
+        document.getElementById("postsDiv").appendChild(child);
+      });
+    }
+  </script>
+</body>
+
+</html>

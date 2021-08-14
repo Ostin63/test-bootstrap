@@ -1,0 +1,42 @@
+.header__top-wrapper,
+.header__nav {
+  padding: 24px 9px 23px;
+  font-size: 18.0488px;
+  line-height: 21px;
+
+  @media (min-width: $desktop-width) {
+    padding: 14px 105px 15px;
+  }
+}
+
+.header__blockquote {
+  margin: auto 0;
+}
+
+.header__social-list {
+  width: 160px;
+  list-style: none;
+}
+
+.header__item {
+  margin: auto 0;
+}
+
+.header__social-svg {
+  fill: var(--green);
+}
+
+.header__info-address {
+  width: 226px;
+  margin-top: -6px;
+}
+
+.header__pin-svg,
+.header__phone-svg {
+  fill: var(--green);
+}
+
+.header__info-phone {
+  width: 183px;
+  margin-bottom: -8px;
+}
