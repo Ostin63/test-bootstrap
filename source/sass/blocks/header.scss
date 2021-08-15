@@ -3,6 +3,7 @@
   padding: 24px 9px 23px;
   font-size: 18.0488px;
   line-height: 21px;
+  font-family: $font-roboto;
 
   @media (min-width: $desktop-width) {
     padding: 14px 105px 15px;
@@ -15,7 +16,6 @@
 
 .header__social-list {
   width: 160px;
-  list-style: none;
 }
 
 .header__item {

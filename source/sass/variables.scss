@@ -1,21 +1,50 @@
 $tablet-width: 768px;
-$tablet-width-onli: 618px;
+$tablet-width-only: 618px;
 $desktop-width: 1200px;
+$desktop-width-only: 1440px;
 
 :root {
   --white: #ffffff;
+  --white-0: rgba(255, 255, 255, 0);
   --black: #333333;
+  --black-form: #3a3a3a;
+  --special-black: #444444;
+  --black-20: rgba(0, 0, 0, 0.2);
   --greey-dark: #6a6a6a;
   --green: #00793a;
   --grey: #f0f0f0;
 }
 
-.btn-special-green {
+$font-oswald: "Oswald", "Arial", sans-serif;
+$font-roboto: "Roboto", "Arial", sans-serif;
+
+.btn-success {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  font-family: $font-roboto;
   background: var(--green);
   color: var(--white);
 }
 
-$font-oswald: "Oswald", "Arial", sans-serif;
-$font-roboto: "Roboto", "Arial", sans-serif;
+.form-label {
+  margin-bottom: 6px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+$shadow-20: 0 0 50px var(--black-20);
 
 $gradient-bg: linear-gradient(180deg, var(--greey-dark) 0%, var(--black) 100%);
+$gradient-bg-form: linear-gradient(75deg, var(--green) 57%, var(--black) 57%);
+$gradient-bg-form-lg: linear-gradient(75deg, var(--green) 44%, var(--black) 44%);

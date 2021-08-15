@@ -8,7 +8,7 @@
   background-size: 614px 420px, 895px 420px;
   background-repeat: no-repeat;
 
-  @media (min-width: $tablet-width-onli) {
+  @media (min-width: $tablet-width-only) {
     padding: 57px 10px 0 11px;
     background-position: 0 0, 100% 0;
   }
@@ -23,24 +23,47 @@
       content: "";
       margin-left: 194px;
       background-image: url("../img/car.png");
-      background-position: 100% 100%;
+      background-position: 0 100%;
       background-repeat: no-repeat;
       background-size: cover;
 
       @media (min-width: $desktop-width) {
+        width: 787px;
+        height: 301px;
+        margin-top: -45px;
         margin-left: 323px;
+        background-image: url("../img/car-max.png");
+      }
+
+      @media (min-width: $desktop-width-only) {
+        margin-left: calc(50% - 555px / 2);
       }
     }
   }
 
-  // @media (min-width: $desktop-width) {
-  //   background-image:
-  //     url("../img/bg-max.png"),
-  //     url("../img/bg-promo.jpg");
-  //   background-position: 100% 0;
-  //   background-size: 780px 427px, 895px 420px;
-  //   background-repeat: no-repeat;
-  // }
+  @media (min-width: $desktop-width) {
+    height: 497px;
+    background-image:
+      url("../img/bg-max.png"),
+      url("../img/bg-max.png"),
+      url("../img/bg-promo.jpg");
+    background-size: 780px 420px, 780px 420px, 895px 420px;
+    background-repeat: no-repeat;
+    background-position: 0 0, 0 0, 100% 0;
+  }
+
+  @media (min-width: $desktop-width-only + 10px) {
+    background-position: 0 0, 45% 0, 100% 0;
+  }
+}
+
+.promo__wrapper {
+  padding: 0;
+
+  @media (min-width: $desktop-width) {
+    padding-left: 105px;
+    padding-right: 105px;
+  }
 }
 
 .promo__title {
@@ -52,10 +75,24 @@
   color: var(--white);
   font-family: $font-oswald;
 
-  @media (min-width: $tablet-width-onli) {
+  @media (min-width: $tablet-width-only) {
     width: 490px;
     margin-bottom: 41px;
     font-size: 42px;
     line-height: 50px;
+  }
+}
+
+.promo__button {
+  width: 135px;
+  height: 35px;
+
+  @media (min-width: $tablet-width) {
+    width: 165px;
+    height: 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 160px;
   }
 }
