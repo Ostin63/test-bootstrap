@@ -64,16 +64,6 @@ const createWebp = () => src('source/img/*.{jpg,png}')
   .pipe(dest('build/img'));
 exports.createWebp = createWebp;
 
-const logo = () => src('source/img/logo/*.svg')
-  .pipe(svgsprite({
-    mode: {
-      stack: {},
-    },
-  }))
-  .pipe(rename('logo.svg'))
-  .pipe(dest('build/img'));
-exports.logo = logo;
-
 const svgstack = () => src('source/img/icons/**/*.svg')
   .pipe(svgsprite({
     mode: {
@@ -95,6 +85,17 @@ const copy = (done) => {
   done();
 };
 exports.copy = copy;
+
+const copyjs = (done) => {
+  src([
+    'node_modules/bootstrap/dist/js/**min.js',
+  ], {
+    base: 'node_modules',
+  })
+    .pipe(dest('build/js'));
+  done();
+};
+exports.copyjs = copyjs;
 
 const clean = () => del('build');
 
@@ -129,8 +130,8 @@ const build = series(
     styles,
     html,
     scripts,
-    logo,
     svgstack,
+    copyjs,
     images,
     createWebp,
   ),
@@ -145,7 +146,7 @@ exports.default = series(
     styles,
     html,
     scripts,
-    logo,
+    copyjs,
     svgstack,
     createWebp,
   ),
