@@ -1,11 +1,17 @@
 .form {
+  padding-bottom: 434px;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 82px;
+  }
+}
+
+.form__bg {
   height: 315px;
-  margin-bottom: 434px;
   padding: 53px 10px 0;
   background: $gradient-bg-form;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 82px;
     background: $gradient-bg-form-lg;
   }
 }
@@ -20,11 +26,7 @@
 }
 
 .form__title {
-  font-weight: 600;
-  font-size: 26px;
   line-height: 30px;
-  font-family: $font-oswald;
-  color: var(--white);
 
   @media (min-width: $tablet-width) {
     width: 359px;
@@ -33,11 +35,6 @@
 
 .form__text {
   padding-top: 15px;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
-  font-family: $font-roboto;
-  color: var(--white);
 
   @media (min-width: $tablet-width) {
     width: 359px;

@@ -88,11 +88,13 @@ exports.copy = copy;
 
 const copyjs = (done) => {
   src([
-    'node_modules/bootstrap/dist/js/**min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+    'node_modules/swiper/swiper-bundle.min.js',
+    'node_modules/leaflet/dist/leaflet.{css,js}',
   ], {
     base: 'node_modules',
   })
-    .pipe(dest('build/js'));
+    .pipe(dest('build'));
   done();
 };
 exports.copyjs = copyjs;

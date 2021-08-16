@@ -1,0 +1,91 @@
+.reviews__wrapper {
+  width: 100%;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 40px 10px 0;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 14px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 44px 0 0;
+  }
+}
+
+
+.reviews__slider {
+  @media (min-width: $tablet-width) {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: -11px;
+    margin-right: -11px;
+  }
+}
+
+.reviews__title {
+  margin-bottom: 19px;
+}
+
+.reviews__text {
+  margin-bottom: 36px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 60px;
+  }
+}
+
+.reviews__slide {
+  width: 300px;
+  height: 433px;
+  margin: 0 auto;
+  padding: 24px 10px 36px;
+  text-align: left;
+
+  @media (min-width: $tablet-width) {
+    width: 360px;
+    height: 480px;
+    padding-left: 17px;
+    padding-right: 15px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 350px;
+  }
+}
+
+.review__bottom-content {
+  p {
+    font-size: 16px;
+    line-height: 19px;
+    font-style: italic;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-left: 8px;
+  }
+}
+
+.reviews__control {
+  width: 284px;
+  margin: 0 auto;
+}
+
+.reviews__control-button {
+  width: 129px;
+  height: 40px;
+  margin: 40px 0;
+  background: url("../img/stack.svg#arrow") 50% 50% no-repeat;
+  background-size: 129px;
+
+  &--prev {
+    transform: rotate(180deg);
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 80px;
+  }
+}

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Альфа-Информ</title>
+  <link rel="stylesheet" href="leaflet/dist/leaflet.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -41,7 +42,7 @@
           </a>
         </li>
         <li class="header__item">
-          <a class="fheader__social-link" href="#">
+          <a class="header__social-link" href="#">
             <svg class="header__social-svg header__social-svg--instagram" role="img" aria-label="Мы в Инстаграме"
               width="31" height="31">
               <use xlink:href="img/stack.svg#instagram"></use>
@@ -91,13 +92,13 @@
   </header>
 
   <main>
-    <section class="promo bg-light">
+    <section class="promo bg-grey">
       <div class="promo__wrapper container-xl">
-        <h1 class="promo__title">Качественные автозапчасти&nbsp;для иномарок</h1>
+        <h1 class="promo__title text-white">Качественные автозапчасти&nbsp;для иномарок</h1>
         <a href="#" class="promo__button btn btn-success" role="button">Оставить заявку</a>
       </div>
     </section>
-    <section class="brands bg-light">
+    <section class="brands bg-grey">
       <div class="brands__wrapper container-xl">
         <h2 class="brands__title m-0">Бренды, с которыми мы работаем</h2>
         <div class="brands__list-wrapper">
@@ -256,92 +257,404 @@
         </div>
       </div>
     </section>
-    <section class="form">
-      <div class="form__wrapper container-xl position-relative">
-        <h2 class="form__title m-0">Узнайте сколько стоит Ваша запчасть</h2>
-        <p class="form__text m-0">Заполните форму и наши специалисты подберут для Вас нужные запчасти и комплектующие.
-          Не нужно
-          никуда выезжать - Вам перезвонят и сообщат о наличии каждой детали.</p>
-        <form class="form__block bg-white position-absolute" action="https://echo.htmlacademy.ru/" method="post">
-          <div class="row">
-            <div class="col">
-              <label class="form-label" for="exampleFormControlInput1">Ваше имя</label>
-              <input class="form-control" type="text" name="name" id="exampleFormControlInput1" required>
+    <section class="form bg-grey">
+      <div class="form__bg">
+        <div class="form__wrapper container-xl position-relative">
+          <h2 class="form__title text-white m-0">Узнайте сколько стоит Ваша запчасть</h2>
+          <p class="form__text text-white m-0">Заполните форму и наши специалисты подберут для Вас нужные запчасти и
+            комплектующие.
+            Не нужно
+            никуда выезжать - Вам перезвонят и сообщат о наличии каждой детали.</p>
+          <form class="form__block bg-white position-absolute" action="https://echo.htmlacademy.ru/" method="post">
+            <div class="row">
+              <div class="col">
+                <label class="form-label" for="exampleFormControlInput1">Ваше имя</label>
+                <input class="form-control" type="text" name="name" id="exampleFormControlInput1" required>
+              </div>
+              <div class="col">
+                <label class="form-label" for="exampleFormControlInput2">Телефон</label>
+                <input class="form-control" type="tel" name="phone" id="exampleFormControlInput2" required>
+              </div>
             </div>
-            <div class="col">
-              <label class="form-label" for="exampleFormControlInput2">Телефон</label>
-              <input class="form-control" type="tel" name="phone" id="exampleFormControlInput2" required>
+            <div class="mt-15">
+              <label class="form-label" for="exampleFormControlInput3">Марка и модель автомобиля</label>
+              <input class="form-control" type="text" name="brand" id="exampleFormControlInput3" required>
             </div>
-          </div>
-          <div class="mt-15">
-            <label class="form-label" for="exampleFormControlInput3">Марка и модель автомобиля</label>
-            <input class="form-control" type="text" name="brand" id="exampleFormControlInput3" required>
-          </div>
-          <div class="mt-15">
-            <label class="form-label" for="exampleFormControlInput4">VIN</label>
-            <input class="form-control" type="text" name="vin" id="exampleFormControlInput4">
-          </div>
-          <div class="mt-15">
-            <label class="form-label" for="exampleFormControlTextarea1">Напишите, какие запчасти Вам нужны</label>
-            <textarea class="form-control" name="" id="exampleFormControlTextarea1" cols="30" rows="1"></textarea>
-          </div>
-          <button class="form__button btn btn-success mt-40" type="submit">Подобрать запчасти</button>
-        </form>
+            <div class="mt-15">
+              <label class="form-label" for="exampleFormControlInput4">VIN</label>
+              <input class="form-control" type="text" name="vin" id="exampleFormControlInput4">
+            </div>
+            <div class="mt-15">
+              <label class="form-label" for="exampleFormControlTextarea1">Напишите, какие запчасти Вам нужны</label>
+              <textarea class="form-control" name="" id="exampleFormControlTextarea1" cols="30" rows="1"></textarea>
+            </div>
+            <button class="form__button btn btn-success mt-40" type="submit">Подобрать запчасти</button>
+          </form>
+        </div>
       </div>
     </section>
-    <section class="reviews">
-      <h2 class="reviews__title">Все еще сомневаетесь?</h2>
-      <p class="reviews__text">Мы уже помогли автовладельцам подобрать нужные запчасти</p>
-      <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="carousel-caption d-none">
-              <h3>Мне нравится</h3>
-              <p>Классная сеть по обеспечению запасными частями на все виды транспорта. Поиск запчастей позволяет
-                выбрать поставщика
-                по
-                цене и сроку доставки. прямо на вооружении нареканий моментальная замена или возврат средств. Одно
-                исключение в
-                удобстве
-                связано с изменением дорожной разметки, въезд только со стороны центра.
-                Ребята работают общительные, можно договориться о выборе заказа</p>
-              <p class="reviews__name">Алексей</p>
-              <p class="reviews__auto">Москвич</p>
+    <section class="reviews bg-grey">
+      <div class="reviews__wrapper container-fluid">
+        <h2 class="reviews__title">Все еще сомневаетесь?</h2>
+        <p class="reviews__text">Мы уже помогли автовладельцам подобрать нужные запчасти</p>
+        <div class="reviews__slider swiper-container">
+          <div class="reviews__slider-wrapper swiper-wrapper">
+            <div class=" swiper-slide ">
+              <div class="reviews__slide bg-white d-flex flex-column justify-content-between">
+                <div class="review__top-content">
+                  <h3>Мне нравится</h3>
+                  <p>Классная сеть по обеспечению запасными частями на все виды транспорта. Поиск запчастей позволяет
+                    выбрать поставщика
+                    по
+                    цене и сроку доставки. прямо на вооружении нареканий моментальная замена или возврат средств. Одно
+                    исключение в
+                    удобстве
+                    связано с изменением дорожной разметки, въезд только со стороны центра.
+                    Ребята работают общительные, можно договориться о выборе заказа</p>
+                </div>
+                <div class="review__bottom-content">
+                  <p class="reviews__name m-0">Алексей</p>
+                  <p class="reviews__auto m-0">Москвич</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="reviews__slide bg-white d-flex flex-column justify-content-between">
+                <div class="review__top-content">
+                  <h3>Все купил, все хорошо</h3>
+                  <p>Все ок, ребята четкие и по делу, не обманули</p>
+                </div>
+                <div class="review__bottom-content">
+                  <p class="reviews__name m-0">Иван Петров</p>
+                  <p class="reviews__auto m-0">Renault Logan 2010</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="reviews__slide bg-white d-flex flex-column justify-content-between">
+                <div class="review__top-content">
+                  <h3>Все купил, все плохо</h3>
+                  <p>Халтурщики</p>
+                </div>
+                <div class="review__bottom-content">
+                  <p class="reviews__name m-0">Ирина Егошкина</p>
+                  <p class="reviews__auto m-0">Lada Kalina</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="carousel-caption d-none">
-              <h3>Все купил, все хорошо</h3>
-              <p>Все ок, ребята четкие и по делу, не обманули</p>
-              <p class="reviews__name">Иван Петров</p>
-              <p class="reviews__auto">Renault Logan 2010</p>
-            </div>
+          <div class="reviews__control nav justify-content-between">
+            <div class="reviews__control-button reviews__control-button--next"></div>
+            <div class="reviews__control-button reviews__control-button--prev"></div>
           </div>
-          <div class="carousel-item">
-            <div class="carousel-caption d-none">
-              <h3>Все купил, все плохо</h3>
-              <p>Халтурщики</p>
-              <p class="reviews__name">Ирина Егошкина</p>
-              <p class="reviews__auto">Lada Kalina</p>
+        </div>
+      </div>
+    </section>
+    <section class="info position-relative">
+      <h2 class="info__title mb-sm-3 mb-md-5 text-center">Дополнительная информация</h2>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingOne">
+            <button class="accordion-button bg-grey mb-2 mt-2" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Пункт 1
+            </button>
+          </h3>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-grey">
+              <strong class="info__strong">Пункт 1</strong>
+              <p class="mt-3">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не
+                совсем так. Его корни уходят в
+                один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток,
+                профессор
+                латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum,
+                "consectetur", и
+                занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый
+                первоисточник Lorem Ipsum в
+                разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной
+                Цицероном в 45
+                году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem
+                Ipsum, "Lorem ipsum
+                dolor sit amet..", происходит от одной из строк в разделе 1.10.32</p>
+
+              <p>Классический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны разделы 1.10.32 и
+                1.10.33 "de Finibus
+                Bonorum et Malorum" Цицерона и их английский перевод, сделанный H. Rackham, 1914 год.</p>
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingTwo">
+            <button class="accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Пункт 2
+            </button>
+          </h3>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-grey">
+              <strong class="info__strong">Пункт 2</strong>
+              <p class="mt-3">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не
+                совсем так. Его корни
+                уходят в
+                один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток,
+                профессор
+                латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum,
+                "consectetur", и
+                занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый
+                первоисточник Lorem
+                Ipsum в
+                разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной
+                Цицероном в
+                45
+                году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem
+                Ipsum, "Lorem
+                ipsum
+                dolor sit amet..", происходит от одной из строк в разделе 1.10.32</p>
+
+              <p>Классический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны разделы 1.10.32 и
+                1.10.33 "de
+                Finibus
+                Bonorum et Malorum" Цицерона и их английский перевод, сделанный H. Rackham, 1914 год.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingThree">
+            <button class="accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Пункт 3
+            </button>
+          </h3>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-grey">
+              <strong class="info__strong">Пункт 3</strong>
+              <p class="mt-3">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не
+                совсем так. Его корни
+                уходят в
+                один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток,
+                профессор
+                латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum,
+                "consectetur", и
+                занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый
+                первоисточник Lorem
+                Ipsum в
+                разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной
+                Цицероном в
+                45
+                году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem
+                Ipsum, "Lorem
+                ipsum
+                dolor sit amet..", происходит от одной из строк в разделе 1.10.32</p>
+
+              <p>Классический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны разделы 1.10.32 и
+                1.10.33 "de
+                Finibus
+                Bonorum et Malorum" Цицерона и их английский перевод, сделанный H. Rackham, 1914 год.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingFour">
+            <button class="accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Пункт 4
+            </button>
+          </h3>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-grey">
+              <strong class="info__strong">Пункт 4</strong>
+              <p class="mt-3">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не
+                совсем так. Его корни
+                уходят в
+                один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток,
+                профессор
+                латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum,
+                "consectetur", и
+                занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый
+                первоисточник Lorem
+                Ipsum в
+                разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной
+                Цицероном в
+                45
+                году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem
+                Ipsum, "Lorem
+                ipsum
+                dolor sit amet..", происходит от одной из строк в разделе 1.10.32</p>
+
+              <p>Классический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны разделы 1.10.32 и
+                1.10.33 "de
+                Finibus
+                Bonorum et Malorum" Цицерона и их английский перевод, сделанный H. Rackham, 1914 год.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingFive">
+            <button class="accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              Пункт 5
+            </button>
+          </h3>
+          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-grey">
+              <strong class="info__strong">Пункт 5</strong>
+              <p class="mt-3">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не
+                совсем так. Его корни
+                уходят в
+                один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток,
+                профессор
+                латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum,
+                "consectetur", и
+                занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый
+                первоисточник Lorem
+                Ipsum в
+                разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной
+                Цицероном в
+                45
+                году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem
+                Ipsum, "Lorem
+                ipsum
+                dolor sit amet..", происходит от одной из строк в разделе 1.10.32</p>
+
+              <p>Классический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны разделы 1.10.32 и
+                1.10.33 "de
+                Finibus
+                Bonorum et Malorum" Цицерона и их английский перевод, сделанный H. Rackham, 1914 год.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingSix">
+            <button class="accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+              Пункт 6
+            </button>
+          </h3>
+          <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body bg-grey">
+              <strong class="info__strong">Пункт 6</strong>
+              <p class="mt-3">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не
+                совсем так. Его корни
+                уходят в
+                один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток,
+                профессор
+                латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum,
+                "consectetur", и
+                занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый
+                первоисточник Lorem
+                Ipsum в
+                разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной
+                Цицероном в
+                45
+                году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem
+                Ipsum, "Lorem
+                ipsum
+                dolor sit amet..", происходит от одной из строк в разделе 1.10.32</p>
+
+              <p>Классический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны разделы 1.10.32 и
+                1.10.33 "de
+                Finibus
+                Bonorum et Malorum" Цицерона и их английский перевод, сделанный H. Rackham, 1914 год.</p>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+    <section class="map">
+      <div class="map__wrapper d-flex flex-column bg-dark">
+        <a class="map__logo-link" href="#">
+          <svg class="map__logo-svg" role="img" aria-label="Логотип компании" width="254" height="43">
+            <use xlink:href="img/stack.svg#car-logo-info"></use>
+          </svg>
+        </a>
+        <h2 class="map__title text-white">Ждем Вас в нашем магазине</h2>
+        <div class="d-flex">
+          <span class="mr-3">
+            <svg class="map__pin-svg" role="img" aria-label="пин" width="17" height="23">
+              <use xlink:href="img/stack.svg#pin"></use>
+            </svg>
+          </span>
+          <p class="map__address text-white text-start">г. Пенза, ул. Ленина, 45</p>
+        </div>
+        <div class="map__phone d-flex">
+          <span>
+            <svg class="map__phone-svg" role="img" aria-label="пин" width="19" height="19">
+              <use xlink:href="img/stack.svg#phone"></use>
+            </svg>
+          </span>
+          <div class="map__phone-block d-flex flex-wrap justify-content-between">
+            <a href="tel:+79002229089" class="d-blok text-white">+7 (900) 222-90-89</a>
+            <a href="tel:88412499020" class="d-blok text-white">8 (8412) 49-90-20</a>
+            <a href="tel:+79877806620" class="d-blok text-white">+7 (987) 780-66-20</a>
+          </div>
+        </div>
+        <div class="d-flex">
+          <span class="mr-3">
+            <svg class="map__time-svg" role="img" aria-label="пин" width="23" height="23">
+              <use xlink:href="img/stack.svg#time"></use>
+            </svg>
+          </span>
+          <table class="map__table table text-white">
+            <thead>
+              <tr>
+                <th scope="col">пн-пт</th>
+                <th scope="col">сб</th>
+                <th scope="col">вс</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>9:00-18:00</td>
+                <td>9:00-15:00</td>
+                <td>выходной</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="map__social">
+          <p class="text-white">Подписывайтесь на нас в соцсетях:</p>
+          <ul class="map__social-list align-baseline justify-content-between nav">
+            <li class="map__item">
+              <a class="map__social-link" href="#">
+                <svg class="map__social-svg map__social-svg--instagram" role="img" aria-label="Мы в Инстаграме"
+                  width="31" height="31">
+                  <use xlink:href="img/stack.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="map__item">
+              <a class="map__social-link" href="#">
+                <svg class="map__social-svg map__social-svg--whatsapp" role="img" aria-label="Мы в ватсапп" width="31"
+                  height="31">
+                  <use xlink:href="img/stack.svg#whatsapp"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="map__item">
+              <a class="map__social-link" href="#">
+                <svg class="map__social-svg map__social-svg--viber " role="img" aria-label="Мы в фйбуке" width="31"
+                  height="31">
+                  <use xlink:href="img/stack.svg#viber"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="map__canvas" id="map-canvas"></div>
     </section>
   </main>
 
   <footer class="footer"></footer>
-  <script src="js/bootstrap\dist\js\bootstrap.bundle.min.js"></script>
-  <script src="js/bootstrap\dist\js\bootstrap.esm.min.js"></script>
-  <script src="js/bootstrap\dist\js\bootstrap.min.js"></script>
+  <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="swiper\swiper-bundle.min.js"></script>
+  <script src="leaflet/dist/leaflet.js"></script>
   <script src="js/script.min.js"></script>
 </body>
 

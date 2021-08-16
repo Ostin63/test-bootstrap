@@ -6,17 +6,76 @@ $desktop-width-only: 1440px;
 :root {
   --white: #ffffff;
   --white-0: rgba(255, 255, 255, 0);
-  --black: #333333;
+  --black: #000000;
+  --black-3: #333333;
   --black-form: #3a3a3a;
   --special-black: #444444;
   --black-20: rgba(0, 0, 0, 0.2);
   --greey-dark: #6a6a6a;
   --green: #00793a;
+  --green-border: #01793b;
   --grey: #f0f0f0;
 }
 
 $font-oswald: "Oswald", "Arial", sans-serif;
 $font-roboto: "Roboto", "Arial", sans-serif;
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  padding: 0;
+  border: none;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: $font-roboto;
+}
+
+.table > :not(caption) > * > * {
+  padding: 0;
+}
+
+h1 {
+  margin-bottom: 30px;
+  margin-right: 50px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  font-family: $font-oswald;
+
+  @media (min-width: $tablet-width-only) {
+    width: 490px;
+    margin-bottom: 41px;
+    font-size: 42px;
+    line-height: 50px;
+  }
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 39px;
+  font-family: $font-oswald;
+  color: var(--black);
+}
+
+h3 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  font-family: $font-roboto;
+}
+
+p {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  font-family: $font-roboto;
+}
 
 .btn-success {
   padding: 0;
@@ -42,6 +101,12 @@ $font-roboto: "Roboto", "Arial", sans-serif;
 .mt-40 {
   margin-top: 40px;
 }
+
+.bg-grey {
+  background: var(--grey);
+}
+
+$border-green: 2px solid var(--green-border);
 
 $shadow-20: 0 0 50px var(--black-20);
 
