@@ -1,5 +1,6 @@
-$tablet-width: 768px;
 $tablet-width-only: 618px;
+$tablet-width: 768px;
+$tablet-width-footer: 1006px;
 $desktop-width: 1200px;
 $desktop-width-only: 1440px;
 
@@ -8,6 +9,7 @@ $desktop-width-only: 1440px;
   --white-0: rgba(255, 255, 255, 0);
   --black: #000000;
   --black-3: #333333;
+  --black-90: rgba(51, 51, 51, 0.9);
   --black-form: #3a3a3a;
   --special-black: #444444;
   --black-20: rgba(0, 0, 0, 0.2);
@@ -32,6 +34,11 @@ tr {
   font-size: 14px;
   line-height: 16px;
   font-family: $font-roboto;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 19px;
+  }
 }
 
 .table > :not(caption) > * > * {
@@ -77,19 +84,6 @@ p {
   font-family: $font-roboto;
 }
 
-.btn-success {
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  font-family: $font-roboto;
-  background: var(--green);
-  color: var(--white);
-}
-
 .form-label {
   margin-bottom: 6px;
 }
@@ -100,6 +94,10 @@ p {
 
 .mt-40 {
   margin-top: 40px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
 }
 
 .bg-grey {
@@ -113,3 +111,22 @@ $shadow-20: 0 0 50px var(--black-20);
 $gradient-bg: linear-gradient(180deg, var(--greey-dark) 0%, var(--black) 100%);
 $gradient-bg-form: linear-gradient(75deg, var(--green) 57%, var(--black) 57%);
 $gradient-bg-form-lg: linear-gradient(75deg, var(--green) 44%, var(--black) 44%);
+
+.btn-success {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  font-family: $font-roboto;
+  background: var(--green);
+  color: var(--white);
+
+  &:hover,
+  &:focus {
+    background: $white;
+    color: var(--green);
+  }
+}

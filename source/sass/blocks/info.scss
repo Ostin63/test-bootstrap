@@ -13,17 +13,17 @@
   }
 }
 
-.accordion {
+.info__accordion {
   @media (min-width: $desktop-width) {
     width: 350px;
   }
 }
 
-.accordion-item {
+.info__accordion-item {
   border: none;
 }
 
-.accordion-body {
+.info__accordion-body {
   @media (min-width: $desktop-width) {
     width: 730px;
     top: 152px;
@@ -43,7 +43,7 @@
   line-height: 23px;
 }
 
-.accordion-button {
+.info__accordion-button {
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
@@ -54,7 +54,7 @@
   }
 }
 
-.accordion-button:not(.collapsed) {
+.info__accordion-button:not(.collapsed) {
   color: var(--black);
   background-color: $white;
   border: $border-green;

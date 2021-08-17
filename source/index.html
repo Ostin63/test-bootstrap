@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Альфа-Информ</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="img/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicon/favicon-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="leaflet/dist/leaflet.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -12,7 +16,7 @@
 <body>
   <header class="header">
     <div class="header__top-wrapper  container-xl navbar">
-      <a href="#">
+      <a>
         <svg class="header__logo-svg" role="img" aria-label="Логотип компании" width="254" height="43">
           <use xlink:href="img/stack.svg#car-logo"></use>
         </svg>
@@ -20,13 +24,13 @@
       <blockquote class="header__blockquote d-none d-xl-block d-xxl-block">Только качественные<br>запчасти</blockquote>
       <div class="header__info d-flex justify-content-between flex-column d-none d-xl-block d-xxl-block">
         <div class="header__info-address d-flex justify-content-between">
-          <svg class="header__pin-svg" role="img" aria-label="Логотип компании" width="17" height="23">
+          <svg class="header__pin-svg" role="img" aria-label="иконка пин" width="17" height="23">
             <use xlink:href="img/stack.svg#pin"></use>
           </svg>
           <p class="header__info-text m-0">г. Пенза, ул. Ленина, 45</p>
         </div>
         <div class="header__info-phone">
-          <svg class="header__phone-svg" role="img" aria-label="Логотип компании" width="21" height="19">
+          <svg class="header__phone-svg" role="img" aria-label="иконка телефон" width="21" height="19">
             <use xlink:href="img/stack.svg#phone"></use>
           </svg>
           <a class="text-dark text-decoration-none" href="tel:+7900324323">+7 (900) 321-43-23</a>
@@ -35,7 +39,7 @@
       <ul class="header__social-list align-baseline justify-content-between nav d-none d-xl-flex d-xxl-flex">
         <li class="header__item">
           <a class="header__social-link" href="#">
-            <svg class="header__social-svg header__social-svg--viber " role="img" aria-label="Мы в фйбуке" width="31"
+            <svg class="header__social-svg" role="img" aria-label="Мы в вайбере" width="31"
               height="31">
               <use xlink:href="img/stack.svg#viber"></use>
             </svg>
@@ -43,7 +47,7 @@
         </li>
         <li class="header__item">
           <a class="header__social-link" href="#">
-            <svg class="header__social-svg header__social-svg--instagram" role="img" aria-label="Мы в Инстаграме"
+            <svg class="header__social-svg" role="img" aria-label="Мы в Инстаграме"
               width="31" height="31">
               <use xlink:href="img/stack.svg#instagram"></use>
             </svg>
@@ -51,15 +55,15 @@
         </li>
         <li class="header__item">
           <a class="header__social-link" href="#">
-            <svg class="header__social-svg header__social-svg--whatsapp" role="img" aria-label="Мы в ватсапп" width="31"
+            <svg class="header__social-svg" role="img" aria-label="Мы в ватсапп" width="31"
               height="31">
               <use xlink:href="img/stack.svg#whatsapp"></use>
             </svg>
           </a>
         </li>
       </ul>
-      <a class="d-block d-xl-none d-xxl-none" href="#">
-        <svg class="header__burger-svg" role="img" aria-label="Логотип компании" width="45" height="41">
+      <a class="d-block d-xl-none d-xxl-none" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <svg class="header__burger-svg" role="img" aria-label="кнопка меню" width="45" height="41">
           <use xlink:href="img/stack.svg#burger"></use>
         </svg>
       </a>
@@ -268,25 +272,27 @@
           <form class="form__block bg-white position-absolute" action="https://echo.htmlacademy.ru/" method="post">
             <div class="row">
               <div class="col">
-                <label class="form-label" for="exampleFormControlInput1">Ваше имя</label>
-                <input class="form-control" type="text" name="name" id="exampleFormControlInput1" required>
+                <label class="form__label form-label" for="exampleFormControlInput1">Ваше имя</label>
+                <input class="form-control" type="text" name="name" id="exampleFormControlInput1"
+                  aria-label="First name" required>
               </div>
               <div class="col">
-                <label class="form-label" for="exampleFormControlInput2">Телефон</label>
+                <label class="form__label form-label" for="exampleFormControlInput2">Телефон</label>
                 <input class="form-control" type="tel" name="phone" id="exampleFormControlInput2" required>
               </div>
             </div>
             <div class="mt-15">
-              <label class="form-label" for="exampleFormControlInput3">Марка и модель автомобиля</label>
+              <label class="form__label form-label" for="exampleFormControlInput3">Марка и модель автомобиля</label>
               <input class="form-control" type="text" name="brand" id="exampleFormControlInput3" required>
             </div>
             <div class="mt-15">
-              <label class="form-label" for="exampleFormControlInput4">VIN</label>
+              <label class="form__label form-label" for="exampleFormControlInput4">VIN</label>
               <input class="form-control" type="text" name="vin" id="exampleFormControlInput4">
             </div>
             <div class="mt-15">
-              <label class="form-label" for="exampleFormControlTextarea1">Напишите, какие запчасти Вам нужны</label>
-              <textarea class="form-control" name="" id="exampleFormControlTextarea1" cols="30" rows="1"></textarea>
+              <label class="form__label form-label" for="exampleFormControlTextarea1">Напишите, какие запчасти Вам нужны</label>
+              <textarea class="form-control" name="textarea" id="exampleFormControlTextarea1" cols="30"
+                rows="1"></textarea>
             </div>
             <button class="form__button btn btn-success mt-40" type="submit">Подобрать запчасти</button>
           </form>
@@ -301,7 +307,7 @@
           <div class="reviews__slider-wrapper swiper-wrapper">
             <div class=" swiper-slide ">
               <div class="reviews__slide bg-white d-flex flex-column justify-content-between">
-                <div class="review__top-content">
+                <div class="reviews__top-content">
                   <h3>Мне нравится</h3>
                   <p>Классная сеть по обеспечению запасными частями на все виды транспорта. Поиск запчастей позволяет
                     выбрать поставщика
@@ -312,7 +318,7 @@
                     связано с изменением дорожной разметки, въезд только со стороны центра.
                     Ребята работают общительные, можно договориться о выборе заказа</p>
                 </div>
-                <div class="review__bottom-content">
+                <div class="reviews__bottom-content">
                   <p class="reviews__name m-0">Алексей</p>
                   <p class="reviews__auto m-0">Москвич</p>
                 </div>
@@ -320,11 +326,11 @@
             </div>
             <div class="swiper-slide">
               <div class="reviews__slide bg-white d-flex flex-column justify-content-between">
-                <div class="review__top-content">
+                <div class="reviews__top-content">
                   <h3>Все купил, все хорошо</h3>
                   <p>Все ок, ребята четкие и по делу, не обманули</p>
                 </div>
-                <div class="review__bottom-content">
+                <div class="reviews__bottom-content">
                   <p class="reviews__name m-0">Иван Петров</p>
                   <p class="reviews__auto m-0">Renault Logan 2010</p>
                 </div>
@@ -332,11 +338,54 @@
             </div>
             <div class="swiper-slide">
               <div class="reviews__slide bg-white d-flex flex-column justify-content-between">
-                <div class="review__top-content">
+                <div class="reviews__top-content">
                   <h3>Все купил, все плохо</h3>
                   <p>Халтурщики</p>
                 </div>
-                <div class="review__bottom-content">
+                <div class="reviews__bottom-content">
+                  <p class="reviews__name m-0">Ирина Егошкина</p>
+                  <p class="reviews__auto m-0">Lada Kalina</p>
+                </div>
+              </div>
+            </div>
+            <div class=" swiper-slide ">
+              <div class="reviews__slide bg-white d-flex flex-column justify-content-between">
+                <div class="reviews__top-content">
+                  <h3>Мне нравится</h3>
+                  <p>Классная сеть по обеспечению запасными частями на все виды транспорта. Поиск запчастей позволяет
+                    выбрать поставщика
+                    по
+                    цене и сроку доставки. прямо на вооружении нареканий моментальная замена или возврат средств. Одно
+                    исключение в
+                    удобстве
+                    связано с изменением дорожной разметки, въезд только со стороны центра.
+                    Ребята работают общительные, можно договориться о выборе заказа</p>
+                </div>
+                <div class="reviews__bottom-content">
+                  <p class="reviews__name m-0">Алексей</p>
+                  <p class="reviews__auto m-0">Москвич</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="reviews__slide bg-white d-flex flex-column justify-content-between">
+                <div class="reviews__top-content">
+                  <h3>Все купил, все хорошо</h3>
+                  <p>Все ок, ребята четкие и по делу, не обманули</p>
+                </div>
+                <div class="reviews__bottom-content">
+                  <p class="reviews__name m-0">Иван Петров</p>
+                  <p class="reviews__auto m-0">Renault Logan 2010</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="reviews__slide bg-white d-flex flex-column justify-content-between">
+                <div class="reviews__top-content">
+                  <h3>Все купил, все плохо</h3>
+                  <p>Халтурщики</p>
+                </div>
+                <div class="reviews__bottom-content">
                   <p class="reviews__name m-0">Ирина Егошкина</p>
                   <p class="reviews__auto m-0">Lada Kalina</p>
                 </div>
@@ -352,17 +401,17 @@
     </section>
     <section class="info position-relative">
       <h2 class="info__title mb-sm-3 mb-md-5 text-center">Дополнительная информация</h2>
-      <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
+      <div class="info__accordion accordion" id="accordionExample">
+        <div class="info__accordion-item accordion-item">
           <h3 class="accordion-header" id="headingOne">
-            <button class="accordion-button bg-grey mb-2 mt-2" type="button" data-bs-toggle="collapse"
+            <button class="info__accordion-button accordion-button bg-grey mb-2 mt-2" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               Пункт 1
             </button>
           </h3>
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
             data-bs-parent="#accordionExample">
-            <div class="accordion-body bg-grey">
+            <div class="info__accordion-body accordion-body bg-grey">
               <strong class="info__strong">Пункт 1</strong>
               <p class="mt-3">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не
                 совсем так. Его корни уходят в
@@ -384,16 +433,16 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item">
+        <div class="info__accordion-item accordion-item">
           <h3 class="accordion-header" id="headingTwo">
-            <button class="accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
+            <button class="info__accordion-button accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               Пункт 2
             </button>
           </h3>
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
             data-bs-parent="#accordionExample">
-            <div class="accordion-body bg-grey">
+            <div class="info__accordion-body accordion-body bg-grey">
               <strong class="info__strong">Пункт 2</strong>
               <p class="mt-3">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не
                 совсем так. Его корни
@@ -420,16 +469,16 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item">
+        <div class="info__accordion-item accordion-item">
           <h3 class="accordion-header" id="headingThree">
-            <button class="accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
+            <button class="info__accordion-button accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               Пункт 3
             </button>
           </h3>
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
             data-bs-parent="#accordionExample">
-            <div class="accordion-body bg-grey">
+            <div class="info__accordion-body accordion-body bg-grey">
               <strong class="info__strong">Пункт 3</strong>
               <p class="mt-3">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не
                 совсем так. Его корни
@@ -456,16 +505,16 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item">
+        <div class="info__accordion-item accordion-item">
           <h3 class="accordion-header" id="headingFour">
-            <button class="accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
+            <button class="info__accordion-button accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
               Пункт 4
             </button>
           </h3>
           <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
             data-bs-parent="#accordionExample">
-            <div class="accordion-body bg-grey">
+            <div class="info__accordion-body accordion-body bg-grey">
               <strong class="info__strong">Пункт 4</strong>
               <p class="mt-3">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не
                 совсем так. Его корни
@@ -492,16 +541,16 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item">
+        <div class="info__accordion-item accordion-item">
           <h3 class="accordion-header" id="headingFive">
-            <button class="accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
+            <button class="info__accordion-button accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
               Пункт 5
             </button>
           </h3>
           <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
             data-bs-parent="#accordionExample">
-            <div class="accordion-body bg-grey">
+            <div class="info__accordion-body accordion-body bg-grey">
               <strong class="info__strong">Пункт 5</strong>
               <p class="mt-3">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не
                 совсем так. Его корни
@@ -528,16 +577,16 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item">
+        <div class="info__accordion-item accordion-item">
           <h3 class="accordion-header" id="headingSix">
-            <button class="accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
+            <button class="info__accordion-button accordion-button bg-grey mb-2 mt-2 collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
               Пункт 6
             </button>
           </h3>
           <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
             data-bs-parent="#accordionExample">
-            <div class="accordion-body bg-grey">
+            <div class="info__accordion-body accordion-body bg-grey">
               <strong class="info__strong">Пункт 6</strong>
               <p class="mt-3">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не
                 совсем так. Его корни
@@ -567,16 +616,16 @@
       </div>
     </section>
     <section class="map">
-      <div class="map__wrapper d-flex flex-column bg-dark">
-        <a class="map__logo-link" href="#">
+      <div class="map__wrapper flex-column">
+        <a class="map__logo-link d-block" href="#">
           <svg class="map__logo-svg" role="img" aria-label="Логотип компании" width="254" height="43">
             <use xlink:href="img/stack.svg#car-logo-info"></use>
           </svg>
         </a>
         <h2 class="map__title text-white">Ждем Вас в нашем магазине</h2>
-        <div class="d-flex">
-          <span class="mr-3">
-            <svg class="map__pin-svg" role="img" aria-label="пин" width="17" height="23">
+        <div class="map__address-wrapper d-flex">
+          <span>
+            <svg class="map__pin-svg" role="img" aria-label="иконка пин" width="17" height="23">
               <use xlink:href="img/stack.svg#pin"></use>
             </svg>
           </span>
@@ -584,7 +633,7 @@
         </div>
         <div class="map__phone d-flex">
           <span>
-            <svg class="map__phone-svg" role="img" aria-label="пин" width="19" height="19">
+            <svg class="map__phone-svg" role="img" aria-label="иконка телефон" width="19" height="19">
               <use xlink:href="img/stack.svg#phone"></use>
             </svg>
           </span>
@@ -594,9 +643,9 @@
             <a href="tel:+79877806620" class="d-blok text-white">+7 (987) 780-66-20</a>
           </div>
         </div>
-        <div class="d-flex">
+        <div class="map__time-wrapper d-flex">
           <span class="mr-3">
-            <svg class="map__time-svg" role="img" aria-label="пин" width="23" height="23">
+            <svg class="map__time-svg" role="img" aria-label="иконка время" width="23" height="23">
               <use xlink:href="img/stack.svg#time"></use>
             </svg>
           </span>
@@ -618,11 +667,11 @@
           </table>
         </div>
         <div class="map__social">
-          <p class="text-white">Подписывайтесь на нас в соцсетях:</p>
+          <p class="map__social-text text-white">Подписывайтесь на нас в соцсетях:</p>
           <ul class="map__social-list align-baseline justify-content-between nav">
             <li class="map__item">
               <a class="map__social-link" href="#">
-                <svg class="map__social-svg map__social-svg--instagram" role="img" aria-label="Мы в Инстаграме"
+                <svg class="map__social-svg" role="img" aria-label="Мы в Инстаграме"
                   width="31" height="31">
                   <use xlink:href="img/stack.svg#instagram"></use>
                 </svg>
@@ -630,7 +679,7 @@
             </li>
             <li class="map__item">
               <a class="map__social-link" href="#">
-                <svg class="map__social-svg map__social-svg--whatsapp" role="img" aria-label="Мы в ватсапп" width="31"
+                <svg class="map__social-svg" role="img" aria-label="Мы в ватсапп" width="31"
                   height="31">
                   <use xlink:href="img/stack.svg#whatsapp"></use>
                 </svg>
@@ -638,7 +687,7 @@
             </li>
             <li class="map__item">
               <a class="map__social-link" href="#">
-                <svg class="map__social-svg map__social-svg--viber " role="img" aria-label="Мы в фйбуке" width="31"
+                <svg class="map__social-svg" role="img" aria-label="Мы в вайбере" width="31"
                   height="31">
                   <use xlink:href="img/stack.svg#viber"></use>
                 </svg>
@@ -651,9 +700,134 @@
     </section>
   </main>
 
-  <footer class="footer"></footer>
+  <footer class="footer d-flex flex-column flex-md-row justify-content-between flex-wrap">
+    <a class="footer__logo d-flex justify-content-center order-0">
+      <svg class="footer__logo-svg" role="img" aria-label="Логотип компании" width="254" height="43">
+        <use xlink:href="img/stack.svg#car-logo"></use>
+      </svg>
+    </a>
+    <ul class="footer__social-list order-2 align-baseline justify-content-between nav">
+      <li class="footer__item">
+        <a class="footer__social-link" href="#">
+          <svg class="footer__social-svg" role="img" aria-label="Мы в вайбере" width="31"
+            height="31">
+            <use xlink:href="img/stack.svg#viber"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__social-link" href="#">
+          <svg class="footer__social-svg" role="img" aria-label="Мы в Инстаграме"
+            width="31" height="31">
+            <use xlink:href="img/stack.svg#instagram"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__social-link" href="#">
+          <svg class="footer__social-svg" role="img" aria-label="Мы в ватсапп" width="31"
+            height="31">
+            <use xlink:href="img/stack.svg#whatsapp"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <a href="#" class="footer__button btn btn-success order-3" role="button">Оставить заявку</a>
+    <p class="footer__copyright order-1 order-md-4 text-center">© 2021, Все права защищены</p>
+    <p class="footer__confidentiality order-5 text-center">Политика конфиденциальности</p>
+  </footer>
+
+  <!-- modal -->
+  <div class="modal fade pr-0" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <div class="modal__dialog modal-dialog">
+      <div class="modal__content modal-content">
+        <div class="modal__header modal-header">
+          <button type="button" class="modal__close btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <svg class="modal__close-svg" role="img" aria-label="сlose" width="37" height="37">
+              <use xlink:href="img/stack.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="modal__body modal-body d-flex flex-column flex-md-row">
+          <div class="modal__top-wrapper flex-column">
+            <a class="modal__logo">
+              <svg class="modal__logo-svg" role="img" aria-label="Логотип компании" width="254" height="43">
+                <use xlink:href="img/stack.svg#car-logo"></use>
+              </svg>
+            </a>
+            <p class="modal__top-text">Только качественные запчасти</p>
+            <div class="modal__top-address-wrapper d-flex">
+              <span>
+                <svg class="modal__top-pin-svg" role="img" aria-label="иконка пин" width="17" height="23">
+                  <use xlink:href="img/stack.svg#pin"></use>
+                </svg>
+              </span>
+              <p class="modal__top-address text-start">г. Пенза, ул. Ленина, 45</p>
+            </div>
+            <div class="modal__top-phone d-flex">
+              <span>
+                <svg class="modal__top-phone-svg" role="img" aria-label="иконка телефон" width="19" height="19">
+                  <use xlink:href="img/stack.svg#phone"></use>
+                </svg>
+              </span>
+              <div class="modal__top-phone-block d-flex flex-wrap justify-content-between">
+                <a href="tel:+79003214323" class="d-blok">+7 (900) 321-43-23</a>
+              </div>
+            </div>
+            <ul class="modal__top-social-list align-baseline justify-content-between nav">
+              <li class="modal__top-item">
+                <a class="modal__top-social-link" href="#">
+                  <svg class="modal__top-social-svg" role="img" aria-label="Мы в Инстаграме" width="31" height="31">
+                    <use xlink:href="img/stack.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="modal__top-item">
+                <a class="modal__top-social-link" href="#">
+                  <svg class="modal__top-social-svg" role="img" aria-label="Мы в ватсапп" width="31" height="31">
+                    <use xlink:href="img/stack.svg#whatsapp"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="modal__top-item">
+                <a class="modal__top-social-link" href="#">
+                  <svg class="modal__top-social-svg" role="img" aria-label="Мы в вайбере" width="31" height="31">
+                    <use xlink:href="img/stack.svg#viber"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <ul class="modal__nav nav flex-column">
+            <li class="mb-30">
+              <a class="text-reset text-decoration-none" href="#">Главная</a>
+            </li>
+            <li class="mb-30">
+              <a class="text-reset text-decoration-none" href="#">О компании</a>
+            </li>
+            <li class="mb-30">
+              <a class="text-reset text-decoration-none" href="#">Подбор автозапчастей</a>
+            </li>
+            <li class="mb-30">
+              <a class="text-reset text-decoration-none" href="#">Каталог</a>
+            </li>
+            <li class="mb-30">
+              <a class="text-reset text-decoration-none" href="#">Новости</a>
+            </li>
+            <li class="mb-30">
+              <a class="text-reset text-decoration-none" href="#">Акции и бонусы</a>
+            </li>
+            <li class="">
+              <a class="text-reset text-decoration-none" href="#">Контакты</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="swiper\swiper-bundle.min.js"></script>
+  <script src="swiper/swiper-bundle.min.js"></script>
   <script src="leaflet/dist/leaflet.js"></script>
   <script src="js/script.min.js"></script>
 </body>

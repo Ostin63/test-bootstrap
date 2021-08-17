@@ -10,7 +10,6 @@ const rename = require('gulp-rename');
 const htmlmin = require('gulp-htmlmin');
 const terser = require('gulp-terser');
 const imagemin = require('gulp-imagemin');
-const webp = require('gulp-webp');
 const svgsprite = require('gulp-svg-sprite');
 const del = require('del');
 const sync = require('browser-sync').create();
@@ -44,7 +43,7 @@ const scripts = () => src('source/js/*.js')
 
 exports.scripts = scripts;
 
-const images = () => src('source/img/**/*.{png,jpg}')
+const images = () => src('source/img/**/*.{png,jpg,svg}')
   .pipe(imagemin([
     imagemin.mozjpeg({
       progressive: true,
@@ -56,13 +55,6 @@ const images = () => src('source/img/**/*.{png,jpg}')
   ]))
   .pipe(dest('build/img'));
 exports.images = images;
-
-const createWebp = () => src('source/img/*.{jpg,png}')
-  .pipe(webp({
-    quality: 90,
-  }))
-  .pipe(dest('build/img'));
-exports.createWebp = createWebp;
 
 const svgstack = () => src('source/img/icons/**/*.svg')
   .pipe(svgsprite({
@@ -77,7 +69,10 @@ exports.svgstack = svgstack;
 const copy = (done) => {
   src([
     'source/fonts/*.{woff2,woff}',
-    'source/img/**/*.{jpg,png}',
+    'source/*.ico',
+    'source/img/favicon/favicon.svg',
+    'source/img/**/*.{jpg,png,svg}',
+    'source/*.webmanifest',
   ], {
     base: 'source',
   })
@@ -86,7 +81,7 @@ const copy = (done) => {
 };
 exports.copy = copy;
 
-const copyjs = (done) => {
+const copymodules = (done) => {
   src([
     'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
     'node_modules/swiper/swiper-bundle.min.js',
@@ -97,7 +92,7 @@ const copyjs = (done) => {
     .pipe(dest('build'));
   done();
 };
-exports.copyjs = copyjs;
+exports.copymodules = copymodules;
 
 const clean = () => del('build');
 
@@ -133,9 +128,8 @@ const build = series(
     html,
     scripts,
     svgstack,
-    copyjs,
+    copymodules,
     images,
-    createWebp,
   ),
 );
 
@@ -148,9 +142,8 @@ exports.default = series(
     styles,
     html,
     scripts,
-    copyjs,
+    copymodules,
     svgstack,
-    createWebp,
   ),
   series(
     server,
