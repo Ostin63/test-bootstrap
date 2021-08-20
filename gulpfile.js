@@ -43,7 +43,7 @@ const scripts = () => src('source/js/*.js')
 
 exports.scripts = scripts;
 
-const images = () => src('source/img/**/*.{png,jpg,svg}')
+const images = () => src('source/img/**/*.{png,jpg}')
   .pipe(imagemin([
     imagemin.mozjpeg({
       progressive: true,
@@ -71,7 +71,7 @@ const copy = (done) => {
     'source/fonts/*.{woff2,woff}',
     'source/*.ico',
     'source/img/favicon/favicon.svg',
-    'source/img/**/*.{jpg,png,svg}',
+    'source/img/**/*.{jpg,png}',
     'source/*.webmanifest',
   ], {
     base: 'source',
